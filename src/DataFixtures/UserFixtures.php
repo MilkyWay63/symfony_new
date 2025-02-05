@@ -20,10 +20,10 @@ class UserFixtures extends Fixture
 
         $users = [
             ['email' => 'testuser@email.com', 'password' => 'SecurePass123', 'roles' => ['ROLE_USER']],
-            ['email' => $faker->unique()->safeEmail, 'password' => 'randompass1', 'roles' => ['ROLE_USER']],
-            ['email' => $faker->unique()->safeEmail, 'password' => 'randompass2', 'roles' => ['ROLE_USER']],
-            ['email' => $faker->unique()->safeEmail, 'password' => 'randompass3', 'roles' => ['ROLE_USER']],
-            ['email' => $faker->unique()->safeEmail, 'password' => 'randompass4', 'roles' => ['ROLE_ADMIN']],
+            ['email' => $faker->unique()->safeEmail(), 'password' => 'randompass1', 'roles' => ['ROLE_USER']],
+            ['email' => $faker->unique()->safeEmail(), 'password' => 'randompass2', 'roles' => ['ROLE_USER']],
+            ['email' => $faker->unique()->safeEmail(), 'password' => 'randompass3', 'roles' => ['ROLE_USER']],
+            ['email' => $faker->unique()->safeEmail(), 'password' => 'randompass4', 'roles' => ['ROLE_ADMIN']],
         ];
 
         foreach ($users as $userData) {

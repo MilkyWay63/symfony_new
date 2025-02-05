@@ -8,7 +8,6 @@ class JwtTokenProvider
 {
     public static function getJwtToken(KernelBrowser $client, string $username, string $password): string
     {
-
         $client->jsonRequest(
             'POST',
             '/api/login_check',
@@ -19,7 +18,6 @@ class JwtTokenProvider
         );
 
         $response = $client->getResponse();
-
         $data = json_decode($response->getContent(), true);
 
         return $data['token'] ?? '';

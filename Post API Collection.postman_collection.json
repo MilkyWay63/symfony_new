@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "3ff71873-3cbe-4966-8eae-8ccf116b8a0f",
+		"name": "Post API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19330002"
+	},
+	"item": [
+		{
+			"name": "Create Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New Post Title\",\n  \"content\": \"This is the content of the post.\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/posts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/posts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/posts/100",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated Post Title\",\n  \"content\": \"Updated content of the post.\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/posts/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/posts/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"exam@example.com\",\r\n    \"password\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/registration",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"username\": \"emi@example.com\",\r\n\"password\": \"melancholy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/login_check",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://localhost:443",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mzg3NjcwNTQsImV4cCI6MTczODc3MDY1NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVzdHVzZXJAZW1haWwuY29tIn0.qRgy1vBON783P6fVCE-velKoq1UtwTog5IDz17rhKaMsDXWlQ1aE-xMnd_D2eETREvoogu-r3qe4a7I4nyWQcgu88f7KXodNalegQGODeQeSYXKzT7DsKW8RbgHxL6WmbqX73taqBMGxGQdXFDZAhblY0NEyyBkCCsV5grpP4xDCoI7Z5u8uR3q-FyOP7iHtjMGTndY2pVYYNSP69DqOBwE_fPILQDt8xRm8NMTYMAc6_UU0cKMHjDgRpoAUdwPZ9JUDOCtyJb5GInxX-1jzhazOgZTmVQ9-p1oxmUub5JFW6RRynAAPB8_l-vOfnp0fiH0Rz90cwPHJE_fFfGy6Hw",
+			"type": "string"
+		}
+	]
+}
